@@ -1,0 +1,53 @@
+what we wanted to achieve
+	- game
+	- past we have created vr, kinect
+
+what we wanted to create
+	- multiplayer game so we can remotely play together
+	- halloween = zombies
+
+
+how we actually created game
+++++++++++++++++++++++++++++
+
+prototype enemy ai
+==================
+
+create empty scene
+------------------
+add empty game object - player
+add empty game object - enemy
+add empty game object - environment
+
+add plane
+add capsule - player
+add capsule - enemy
+
+create red material
+create green material
+create white material
+
+apply materials
+
+add nav mesh agent to enemy
+make plane static
+bake nav mesh
+
+create ai script
+	-zoom code size
+	-explain file
+	-add nav mesh agent
+	-add transform for player
+
+convert to fps
+--------------
+add mouse look to camera
+parent in player
+add move script
+
+
+
+
+
+
+
