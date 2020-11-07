@@ -1296,6 +1296,7 @@ MonoBehaviour:
   endOfBarrel: {fileID: 167549743}
   bulletPrefab: {fileID: 3682548789851966809, guid: d34c3ffdf173cb046af2b4beb9cd023c, type: 3}
   camera: {fileID: 811422187}
+  force: 4000
 --- !u!1 &2123188774
 GameObject:
   m_ObjectHideFlags: 0

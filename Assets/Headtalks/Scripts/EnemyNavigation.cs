@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyNavigation : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] Transform player;
