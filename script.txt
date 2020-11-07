@@ -45,6 +45,8 @@ add mouse look to camera
 parent in player
 add move script
 
+add cylinder for barrel
+add empty game object for end of barrel
 
 
 
