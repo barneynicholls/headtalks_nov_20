@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] float spawnArea;
+    [SerializeField] float sizeOfSpawnArea;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < enemyCount; i++)
         {
-            var area = spawnArea / 2;
+            var area = sizeOfSpawnArea / 2;
 
             var position = new Vector3(Random.Range(-area, area),
                                        transform.position.y,
@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, new Vector3(spawnArea, spawnArea, spawnArea));
+        Gizmos.DrawWireCube(transform.position, new Vector3(sizeOfSpawnArea, sizeOfSpawnArea, sizeOfSpawnArea));
     }
 
 }

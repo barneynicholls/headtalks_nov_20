@@ -10,6 +10,12 @@ what we wanted to create
 how we actually created game
 ++++++++++++++++++++++++++++
 
+move scripts out
+delete prefabs
+remove enemy tag
+
+
+
 prototype enemy ai
 ==================
 
@@ -34,6 +40,7 @@ make plane static
 bake nav mesh
 
 create ai script
+	-attach to enemy 
 	-zoom code size
 	-explain file
 	-add nav mesh agent
@@ -45,8 +52,35 @@ add mouse look to camera
 parent in player
 add move script
 
+show player object before hand
+add player movement script
+point out the character controller
+remember to move character controller up
+
 add cylinder for barrel
 add empty game object for end of barrel
+
+attach weapon script to player
+look at properties 
+
+create bullet
+explain code
+add rigidbody
+
+add bullet script
+look at bullet script
+
+add capsule collider to enemy
+resize collider
+add 'enemy' tag 
+
+add spawner and setup
+prefabs wont find player
+create enemy prefab
+attach new version of script that finds nearest player
+
+** PLAYABLE GAME **
+
 
 
 

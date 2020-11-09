@@ -22,7 +22,7 @@ public class EnemyNavigationForPrefab : MonoBehaviour
                                             senseRadius,
                                             playerLayer);
 
-        var destination = players.Length == 0 ? transform.position : players[0].gameObject.transform.position;
+        var destination = GetNearestPlayer(players);
 
         navMeshAgent.SetDestination(destination);
     }
@@ -32,4 +32,23 @@ public class EnemyNavigationForPrefab : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, senseRadius);
     }
+
+    Vector3 GetNearestPlayer(Collider[] colliders)
+    {
+        Collider bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+
+        foreach (var collider in colliders)
+        {
+            Vector3 directionToTarget = collider.transform.position - transform.position;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = collider;
+            }
+        }
+
+        return bestTarget?.transform.position ?? transform.position;
+    } 
 }
