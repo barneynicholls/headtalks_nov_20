@@ -2,9 +2,9 @@
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
+    [SerializeField] float mouseSensitivity = 200f;
 
-    public Transform player;
+    [SerializeField] Transform player;
 
     float xRotation = 0f;
 

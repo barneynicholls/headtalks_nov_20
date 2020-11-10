@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyNavigationForPrefab : MonoBehaviour
+public class EnemyAIForPrefab : MonoBehaviour
 {
     [SerializeField] float senseRadius = 20f;
     [SerializeField] LayerMask playerLayer;
@@ -22,9 +22,9 @@ public class EnemyNavigationForPrefab : MonoBehaviour
                                             senseRadius,
                                             playerLayer);
 
-        var destination = GetNearestPlayer(players);
+        var nearestPlayer = GetNearestPlayer(players);
 
-        navMeshAgent.SetDestination(destination);
+        navMeshAgent.SetDestination(nearestPlayer);
     }
 
     void OnDrawGizmos()
@@ -35,20 +35,20 @@ public class EnemyNavigationForPrefab : MonoBehaviour
 
     Vector3 GetNearestPlayer(Collider[] colliders)
     {
-        Collider bestTarget = null;
-        float closestDistanceSqr = Mathf.Infinity;
+        Collider nearestCollider = null;
+        float closestDistance = Mathf.Infinity;
 
         foreach (var collider in colliders)
         {
             Vector3 directionToTarget = collider.transform.position - transform.position;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
+            float distance = directionToTarget.sqrMagnitude;
+            if (distance < closestDistance)
             {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = collider;
+                closestDistance = distance;
+                nearestCollider = collider;
             }
         }
 
-        return bestTarget?.transform.position ?? transform.position;
+        return nearestCollider?.transform.position ?? transform.position;
     } 
 }

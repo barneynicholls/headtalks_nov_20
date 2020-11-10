@@ -12,7 +12,11 @@ how we actually created game
 
 move scripts out
 delete prefabs
+delete materials
 remove enemy tag
+remove Player layer
+clear nav mesh
+set default layout
 
 
 
@@ -55,7 +59,7 @@ add move script
 show player object before hand
 add player movement script
 point out the character controller
-remember to move character controller up
+remember to move character controller up on gameobject
 
 add cylinder for barrel
 add empty game object for end of barrel
