@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemyPrefab, position, Quaternion.identity);
         }
 
-        yield return new WaitForSeconds(Random.Range(5f, 20f));
+        yield return new WaitForSeconds(Random.Range(5f, 10f));
 
         StartCoroutine(SpawnEnemies());
     }
